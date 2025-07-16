@@ -26,6 +26,12 @@ public struct HRotationStack<Content: View>: View {
         UIScreen.main.bounds.width - (sideEdge * 2)
     }
     
+    public init(viewAmount: Int, @ViewBuilder content: @escaping (_ index: Int) -> Content) {
+        self.viewAmount = viewAmount
+        self.content = content
+    }
+    
+    
     public var body: some View {
         ZStack {
             ForEach(0..<viewAmount, id: \.self) {
