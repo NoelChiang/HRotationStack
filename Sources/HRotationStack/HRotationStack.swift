@@ -5,7 +5,7 @@ import SwiftUI
 
 
 @available(iOS 13.0, *)
-struct HRotationStack<Content: View>: View {
+public struct HRotationStack<Content: View>: View {
     /// Amount of view, body will use this value as iterating times to execute viewBuilder
     var viewAmount: Int
     
@@ -26,7 +26,7 @@ struct HRotationStack<Content: View>: View {
         UIScreen.main.bounds.width - (sideEdge * 2)
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack {
             ForEach(0..<viewAmount, id: \.self) {
                 content($0)
